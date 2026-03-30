@@ -167,11 +167,11 @@
     "terminal.ansiBrightBlack": "#576e75",
     "terminal.ansiBrightBlue": "#74dfff",
     "terminal.ansiBrightCyan": "#58b6ce",
-    "terminal.ansiBrightGreen": "#8ba400",
-    "terminal.ansiBrightMagenta": "#d73482",
-    "terminal.ansiBrightRed": "#ff6961",
+    "terminal.ansiBrightGreen": "#a6c400",
+    "terminal.ansiBrightMagenta": "#e860a4",
+    "terminal.ansiBrightRed": "#ff8f89",
     "terminal.ansiBrightWhite": "#ebebeb",
-    "terminal.ansiBrightYellow": "#f5c94e",
+    "terminal.ansiBrightYellow": "#f7d96f",
     "terminalCursor.foreground": "#ebebeb",
 
     "gitDecoration.addedResourceForeground": "#8ba400",
@@ -252,17 +252,6 @@
       }
     },
     {
-      "name": "Doc Comments",
-      "scope": [
-        "comment.block.documentation",
-        "comment.block.javadoc"
-      ],
-      "settings": {
-        "foreground": "#576e75",
-        "fontStyle": "italic"
-      }
-    },
-    {
       "name": "Doc Comment Tags",
       "scope": [
         "comment.block.documentation storage.type",
@@ -325,10 +314,7 @@
     {
       "name": "Numbers",
       "scope": [
-        "constant.numeric",
-        "constant.numeric.integer",
-        "constant.numeric.float",
-        "constant.numeric.hex"
+        "constant.numeric"
       ],
       "settings": {
         "foreground": "#df7459"
@@ -350,21 +336,15 @@
     {
       "name": "Variables",
       "scope": [
+        "meta.function.parameters variable",
+        "meta.parameter",
+        "support.variable.property",
         "variable",
         "variable.other",
-        "variable.parameter",
-        "variable.other.readwrite"
-      ],
-      "settings": {
-        "foreground": "#2faaa0"
-      }
-    },
-    {
-      "name": "Variable - Property",
-      "scope": [
-        "variable.other.property",
         "variable.other.object.property",
-        "support.variable.property"
+        "variable.other.property",
+        "variable.other.readwrite",
+        "variable.parameter"
       ],
       "settings": {
         "foreground": "#2faaa0"
@@ -383,42 +363,15 @@
       }
     },
     {
-      "name": "Function Parameters",
+      "name": "Types",
       "scope": [
-        "variable.parameter",
-        "meta.function.parameters variable",
-        "meta.parameter"
-      ],
-      "settings": {
-        "foreground": "#2faaa0"
-      }
-    },
-    {
-      "name": "Classes",
-      "scope": [
-        "entity.name.type.class",
         "entity.name.class",
+        "entity.name.type",
+        "entity.name.type.class",
+        "entity.name.type.enum",
+        "entity.name.type.interface",
         "entity.other.inherited-class",
-        "support.class",
-        "entity.name.type"
-      ],
-      "settings": {
-        "foreground": "#706fc9"
-      }
-    },
-    {
-      "name": "Interfaces",
-      "scope": [
-        "entity.name.type.interface"
-      ],
-      "settings": {
-        "foreground": "#706fc9"
-      }
-    },
-    {
-      "name": "Enums",
-      "scope": [
-        "entity.name.type.enum"
+        "support.class"
       ],
       "settings": {
         "foreground": "#706fc9"
@@ -445,24 +398,16 @@
       }
     },
     {
-      "name": "Attributes/Annotations",
+      "name": "Attributes/Annotations/Preprocessor",
       "scope": [
         "entity.name.function.decorator",
-        "meta.decorator",
-        "meta.attribute",
         "entity.other.attribute-name",
-        "storage.type.annotation"
-      ],
-      "settings": {
-        "foreground": "#bb9200"
-      }
-    },
-    {
-      "name": "Preprocessor",
-      "scope": [
-        "meta.preprocessor",
         "keyword.control.directive",
-        "punctuation.definition.directive"
+        "meta.attribute",
+        "meta.decorator",
+        "meta.preprocessor",
+        "punctuation.definition.directive",
+        "storage.type.annotation"
       ],
       "settings": {
         "foreground": "#bb9200"
@@ -477,27 +422,6 @@
       ],
       "settings": {
         "foreground": "#d73482"
-      }
-    },
-    {
-      "name": "HTML/XML Attribute Names",
-      "scope": [
-        "entity.other.attribute-name.html",
-        "entity.other.attribute-name.xml",
-        "entity.other.attribute-name"
-      ],
-      "settings": {
-        "foreground": "#bb9200"
-      }
-    },
-    {
-      "name": "HTML/XML Attribute Values",
-      "scope": [
-        "string.quoted.double.html",
-        "string.quoted.single.html"
-      ],
-      "settings": {
-        "foreground": "#ce4c02"
       }
     },
     {
@@ -533,8 +457,7 @@
     {
       "name": "JSON Keys",
       "scope": [
-        "support.type.property-name.json",
-        "string.quoted.double.json support.type.property-name"
+        "support.type.property-name.json"
       ],
       "settings": {
         "foreground": "#2faaa0"
@@ -628,8 +551,7 @@
     {
       "name": "Invalid",
       "scope": [
-        "invalid",
-        "invalid.illegal"
+        "invalid"
       ],
       "settings": {
         "foreground": "#ff6961"
@@ -672,16 +594,6 @@
       ],
       "settings": {
         "foreground": "#2c8dd7"
-      }
-    },
-    {
-      "name": "Plain Text",
-      "scope": [
-        "text",
-        "source"
-      ],
-      "settings": {
-        "foreground": "#a4b9ba"
       }
     }
   ],
