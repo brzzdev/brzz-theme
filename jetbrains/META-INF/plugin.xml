@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>com.theme.brzz</id>
+    <name>Brzz Theme</name>
+    <version>1.0.0</version>
+    <vendor>Brzz</vendor>
+
+    <description><![CDATA[
+    <b>Features:</b>
+    <ul>
+        <li>Dark blue-black background for reduced eye strain</li>
+        <li>Carefully selected syntax colors optimized for readability</li>
+        <li>Full UI theming for a consistent experience</li>
+    </ul>
+
+    <br/>
+    <b>Color Palette:</b>
+    <ul>
+        <li>Keywords: Pink-magenta</li>
+        <li>Strings: Burnt orange</li>
+        <li>Types/Classes: Purple-blue</li>
+        <li>Functions: Blue</li>
+        <li>Variables: Teal-green</li>
+        <li>Constants: Olive green</li>
+        <li>Comments: Dark teal (italic)</li>
+    </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <b>1.0.0</b>
+    <ul>
+        <li>Initial release</li>
+        <li>Full editor color scheme</li>
+        <li>Complete UI theme</li>
+    </ul>
+    ]]></change-notes>
+
+    <idea-version since-build="222"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="a7d3e8f1-5c2b-4a9d-b6e0-1f8c3d2a5b7e" path="/Brzz.theme.json"/>
+    </extensions>
+</idea-plugin>
