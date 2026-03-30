@@ -1,0 +1,33 @@
+{
+  "name": "brzz-theme",
+  "displayName": "Brzz Theme",
+  "description": "A dark theme with carefully selected syntax colors optimized for readability",
+  "version": "1.0.0",
+  "publisher": "brzz",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "color theme",
+    "syntax highlighting"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Brzz",
+        "uiTheme": "vs-dark",
+        "path": "./themes/brzz-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT"
+}
