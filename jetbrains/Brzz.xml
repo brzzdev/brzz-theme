@@ -1,6 +1,6 @@
 <scheme name="Brzz" version="142" parent_scheme="Darcula">
   <metaInfo>
-    <property name="created">Brzz Theme</property>
+    <property name="created">2026-03-30T00:00:00</property>
     <property name="ide">Rider</property>
     <property name="ideVersion">2024.1</property>
   </metaInfo>
@@ -237,7 +237,7 @@
     <!-- Labels and Marks -->
     <option name="DEFAULT_LABEL">
       <value>
-        <option name="FOREGROUND" value="aab6c2" />
+        <option name="FOREGROUND" value="a4b9ba" />
         <option name="FONT_TYPE" value="3" />
       </value>
     </option>
