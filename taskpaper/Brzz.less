@@ -1,0 +1,240 @@
+// Brzz — a dark theme for TaskPaper 3.
+//
+// Install: Window > StyleSheet > Open StyleSheet Folder, drop this file in,
+// then pick "Brzz" from Window > StyleSheet.
+
+// Base ---------------------------------------------------------------
+@font-family: "IBM Plex Mono";
+@base-font-size: 13;
+@user-font-size: $USER_FONT_SIZE;
+@ui-scale: @user-font-size / @base-font-size;
+@line-height-multiple: 1.2;
+
+// Palette ------------------------------------------------------------
+@bg: #11111b; // background
+@bg-alt: #0d0d14; // darker chrome (sidebar, toolbar)
+@bg-soft: #242830; // raised surface
+@fg: #a4b9ba; // default text
+@fg-muted: #899c9e; // notes, secondary text
+@fg-faint: #576e75; // disabled, faint guides
+@border: #363d42;
+@selection: #3d5560;
+
+@red: #ff6961;
+@green: #8ba400;
+@yellow: #f5c94e;
+@blue: #2c8dd7;
+@magenta: #d73482;
+@cyan: #2faaa0;
+@bright-blue: #74dfff;
+@bright-cyan: #58b6ce;
+@bright-white: #ebebeb;
+
+// Roles --------------------------------------------------------------
+@text-color: @fg;
+@bg-color: @bg;
+@project-color: @blue;
+@tag-color: @fg-muted;
+@link-color: @bright-blue;
+@done-color: fade(@fg, 40%);
+@guide-color: @border;
+@message-color: @fg-faint;
+
+// UI -----------------------------------------------------------------
+@tint-color: @blue;
+@selection-color: @selection;
+@invisibles-color: fade(@fg-muted, 40%);
+
+window {
+  appearance: NSAppearanceNameVibrantDark;
+}
+
+sidebar {
+  appearance: NSAppearanceNameVibrantDark;
+}
+
+searchbar {
+  color: @fg;
+  background-color: @bg-soft;
+  placeholder-color: @fg-faint;
+  error-text-color: @red;
+}
+
+editor {
+  color: @text-color;
+  font-size: @user-font-size;
+  font-family: @font-family;
+  background-color: @bg-color;
+  line-height-multiple: @line-height-multiple;
+  item-handle-size: 6;
+  item-indent: 20px * @ui-scale;
+  caret-width: 2px;
+  caret-color: @bright-white;
+  handle-color: @guide-color;
+  drop-indicator-color: @tint-color;
+  invisibles-color: @invisibles-color;
+  selection-background-color: @selection-color;
+  guide-line-width: 0.5;
+  guide-line-color: mix(@guide-color, @bg-color, 50%);
+  message-color: @message-color;
+  typewriter-scroll-percent: 50%;
+}
+
+// Projects -----------------------------------------------------------
+item[depth="1"][data-type="project"] {
+  font-weight: semi-bold;
+  font-size: @user-font-size * 1.2;
+  color: @project-color;
+  paragraph-spacing-before: 20;
+  paragraph-spacing-after: 3;
+}
+
+item[depth="2"][data-type="project"] {
+  font-weight: semi-bold;
+  font-size: @user-font-size * 1.1;
+  color: fade(@project-color, 90%);
+  paragraph-spacing-before: 16;
+  paragraph-spacing-after: 3;
+}
+
+item[depth="3"][data-type="project"] {
+  font-weight: semi-bold;
+  font-size: @user-font-size;
+  color: fade(@project-color, 80%);
+  paragraph-spacing-before: 14;
+  paragraph-spacing-after: 3;
+}
+
+item[depth="4"][data-type="project"] {
+  font-weight: semi-bold;
+  font-size: @user-font-size;
+  color: fade(@project-color, 70%);
+  paragraph-spacing-before: 12;
+  paragraph-spacing-after: 3;
+}
+
+// Tasks --------------------------------------------------------------
+item[data-type="task"] {
+  font-style: normal;
+  font-size: @user-font-size;
+}
+
+// Notes --------------------------------------------------------------
+item[data-type="note"] {
+  font-style: normal;
+  font-size: @user-font-size * 0.9;
+  color: @fg-muted;
+  line-height-multiple: 1.15;
+  paragraph-spacing-after: 5;
+}
+
+// Handles ------------------------------------------------------------
+item {
+  handle-color: none;
+  handle-border-color: @guide-color;
+  handle-border-width: 0.5;
+}
+
+item[collapsed] {
+  handle-color: @project-color;
+  handle-border-color: @project-color;
+}
+
+item[filtered] {
+  handle-color: @tag-color;
+  handle-border-color: @tag-color;
+}
+
+item[empty],
+item[leaf] {
+  handle-color: none;
+  handle-border-color: none;
+}
+
+// Tag-driven item styles ---------------------------------------------
+item[data-today],
+item[data-active],
+item[data-now] {
+  color: @green;
+  > run[tag] {
+    color: fade(@green, 60%);
+  }
+}
+
+item[data-next] {
+  color: @cyan;
+  > run[tag] {
+    color: fade(@cyan, 60%);
+  }
+}
+
+item[data-flag],
+item[data-hot],
+item[data-high],
+item[data-prio],
+item[data-priority] {
+  color: @red;
+  > run[tag] {
+    color: fade(@red, 60%);
+  }
+}
+
+item[data-due] {
+  color: @magenta;
+  > run[tag] {
+    color: fade(@magenta, 70%);
+  }
+}
+
+item[data-waiting] {
+  color: @yellow;
+  > run[tag] {
+    color: fade(@yellow, 60%);
+  }
+}
+
+item[data-context] {
+  > run[tag] {
+    color: fade(@bright-cyan, 60%);
+  }
+}
+
+item[data-search] {
+  color: fade(@fg, 50%);
+  > run[tag] {
+    color: fade(@fg, 30%);
+  }
+}
+
+item[data-done] {
+  > run[content] {
+    text-strikethrough: NSUnderlineStyleSingle;
+    text-strikethrough-color: fade(@fg, 30%);
+    color: @done-color;
+  }
+
+  > run[tag] {
+    text-strikethrough: NSUnderlineStyleSingle;
+    text-strikethrough-color: fade(@fg, 30%);
+    color: @done-color;
+  }
+}
+
+// Runs ---------------------------------------------------------------
+run[tag] {
+  font-size: @user-font-size;
+  color: @tag-color;
+}
+
+run[link] {
+  cursor: pointer;
+  color: @link-color;
+}
+
+run[link^="filter"] {
+  color: @text-color;
+}
+
+run[lead] {
+  color: fade(@link-color, 50%);
+}
